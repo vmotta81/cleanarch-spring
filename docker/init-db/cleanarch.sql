@@ -1,0 +1,3 @@
+CREATE USER cleanarch WITH LOGIN PASSWORD 'cleanarch';
+CREATE DATABASE cleanarch;
+GRANT ALL PRIVILEGES ON DATABASE cleanarch TO cleanarch;

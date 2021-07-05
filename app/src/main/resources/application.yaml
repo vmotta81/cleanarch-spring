@@ -1,0 +1,32 @@
+# Server Configuration
+server:
+  port: 8384
+
+# DB Configuration
+db:
+  addr: localhost:5432
+  name: cleanarch
+  user: cleanarch
+  pass: cleanarch
+  show-sql: false
+
+# Spring Configurations
+spring:
+  application:
+    name: cleanarch
+
+  # Spring Database
+  datasource:
+    url: "jdbc:postgresql://${db.addr}/${db.name}"
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    username: ${db.user}
+    password: ${db.pass}
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: validate
+    show-sql: ${db.show-sql}
+    properties:
+      hibernate:
+        format_sql: ${db.show-sql}
