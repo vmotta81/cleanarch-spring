@@ -14,7 +14,7 @@ class UpdatePersonInteractorImpl(
     override fun execute(request: UpdatePersonRequest): PersonResponse {
         val person = request.toDomain()
         val found = personRepository.findById(person.id) ?: throw NoSuchElementException("Person Not Found")
-        val personUpdated = personRepository.save(found.copy(name = person.name))
+        val personUpdated = personRepository.update(found.copy(name = person.name))
         return PersonResponse.from(personUpdated)
     }
 }

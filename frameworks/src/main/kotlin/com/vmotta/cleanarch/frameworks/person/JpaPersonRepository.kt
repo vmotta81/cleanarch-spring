@@ -19,6 +19,10 @@ class JpaPersonRepository(
         return springPersonRepository.save(person)
     }
 
+    override fun update(person: Person): Person {
+        return springPersonRepository.save(person)
+    }
+
     override fun delete(person: Person) {
         return springPersonRepository.delete(person)
     }
